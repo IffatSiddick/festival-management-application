@@ -1,0 +1,6 @@
+.vs/
+echo ".vs/" >> .gitignore
+*.user
+*.suo
+bin/
+obj/
