@@ -32,14 +32,19 @@
             }
         }
 
-        public void DisplayInformation()
+        public override void DisplayInformation()
         {
             Console.WriteLine($"ID: {PersonID}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Telephone: {Telephone}");
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Fee: {Fee}");
-            Console.WriteLine($"Genre/s: {Genres}");
+            Console.WriteLine($"Genre/s:");
+
+            foreach (String genre in Genres)
+            {
+                Console.WriteLine(genre);
+            }
         }
     }
 }

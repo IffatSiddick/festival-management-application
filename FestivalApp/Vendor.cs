@@ -17,13 +17,18 @@
             return product_categories;
         }
 
-        public void DisplayInformation()
+        public override void DisplayInformation()
         {
             Console.WriteLine($"ID: {PersonID}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Telephone: {Telephone}");
             Console.WriteLine($"Email: {Email}");
-            Console.WriteLine($"Product Category/Categories: {product_categories}");
+            Console.WriteLine($"Product Category/Categories:");
+
+            foreach (String product in product_categories)
+            {
+                Console.WriteLine(product);
+            }
         }
     }
 }

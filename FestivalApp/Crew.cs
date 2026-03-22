@@ -65,7 +65,7 @@
             }
         }
 
-        public void DisplayInformation()
+        public override void DisplayInformation()
         {
             Console.WriteLine($"ID: {PersonID}");
             Console.WriteLine($"Name: {Name}");

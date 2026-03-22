@@ -86,7 +86,7 @@ namespace FestivalApp
             {
                 errors.Add("ERROR: Hourly rate is too high.");
             }
-            else if (employment != "FULL TIME" || employment != "PART TIME")
+            else if (employment != "FULL TIME" && employment != "PART TIME")
             {
                 errors.Add("ERROR: Employment type invalid. ");
             }
@@ -94,9 +94,9 @@ namespace FestivalApp
             {
                 errors.Add("ERROR: Weekly hours are outside the limit for this employment type. A full time employee's hours must be between 25 - 40 hours per week.");
             }
-            else if (employment == "PART TIME" && (weekly_hours > 25 || weekly_hours < 1))
+            else if (employment == "PART TIME" && (weekly_hours >= 25 || weekly_hours < 1))
             {
-                errors.Add("ERROE: Weekly hours are outside the limit for this employment type. A part time employee's hours must be between 1 - 24 hours per week");
+                errors.Add("ERROR: Weekly hours are outside the limit for this employment type. A part time employee's hours must be between 1 - 24 hours per week");
             }
 
             if (errors.Count > 0)
@@ -187,6 +187,12 @@ namespace FestivalApp
                 return "ERROR: Person was not found!";
             }
 
+            string[] allowed = { "name", "telephone", "email", "fee", "hourly_rate", "employment", "weekly_hours", "category" };
+            if (!allowed.Contains(column_name))
+            {
+                return "Invalid column name.";
+            }
+                
             repository.EditByID(personID, column_name, updated_value);
             return "SUCCESS: Person '" + person.Name + "' was edited successfully.";
         }

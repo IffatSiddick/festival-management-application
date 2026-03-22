@@ -72,19 +72,19 @@ INSERT INTO `genre_performer` (`performer`, `genre_name`) VALUES ('2', 'rock'), 
 
 CREATE TABLE `crew` (
   `person_id` int(10) NOT NULL AUTO_INCREMENT,
-  `hourly_rate` int(11) NOT NULL,
-  `employment` enum('FULL_TIME','PART_TIME') NOT NULL,
-  `weekly_hours` int(11) NOT NULL,
+  `hourly_rate` int NOT NULL,
+  `employment` enum('FULL TIME','PART TIME') NOT NULL,
+  `weekly_hours` int NOT NULL,
 
   PRIMARY KEY (`person_id`),
 
   FOREIGN KEY (person_id) REFERENCES person(person_id)
   ON DELETE CASCADE
-  ON UPDATE CASCADE
+  ON UPDATE CASCADE,
 
   CONSTRAINT `check_fee` CHECK (`hourly_rate` > 0),
   CONSTRAINT `check_hours` CHECK 
-    (`employment` = 'FULL_TIME' and `weekly_hours` between 25 and 40 or `employment` = 'PART_TIME' and `weekly_hours` between 1 and 24)
+    (`employment` = 'FULL TIME' and `weekly_hours` between 25 and 40 or `employment` = 'PART TIME' and `weekly_hours` between 1 and 24)
 ) ENGINE=InnoDB 
 
 INSERT INTO `crew` (`person_id`,`hourly_rate`, `employment`, `weekly_hours`) 

@@ -147,13 +147,11 @@ namespace FestivalApp
             List<string> genres = new List<string>();
             string genre;
 
-            for (int count = 0; count <= genre_amount; count ++)
+            for (int count = 0; count < genre_amount; count ++)
             { 
                 Console.WriteLine("Enter a genre: "); 
-                genre = Console.ReadLine();
+                genre = Console.ReadLine() ?? "";
                 genres.Add(genre);
-
-                count += 1;
             }
 
             string result = manager.AddPerformer(name, telephone, email, fee, genres);
@@ -161,7 +159,7 @@ namespace FestivalApp
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
-                Console.WriteLine("✓ " + result.Substring(9));
+                Console.WriteLine(" ✓ " + result.Substring(9));
             }
             else
             {
@@ -200,6 +198,7 @@ namespace FestivalApp
             Console.WriteLine("FULL TIME: 25 - 40 hours");
             Console.WriteLine("PART TIME: 1 - 24 hours");
             string hours_in = Console.ReadLine();
+            
             int hours;
 
             if (!int.TryParse(hours_in, out hours))
@@ -213,7 +212,7 @@ namespace FestivalApp
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
-                Console.WriteLine("✓ " + result.Substring(9));
+                Console.WriteLine(" ✓ " + result.Substring(9));
             }
             else
             {
@@ -235,7 +234,7 @@ namespace FestivalApp
             Console.Write("Email: ");
             string email = Console.ReadLine();
 
-            Console.Write("How many genres does this performer perform in?");
+            Console.Write("How many products does this vrndor sell? ");
             string category_in = Console.ReadLine();
 
             int category_amount;
@@ -254,8 +253,6 @@ namespace FestivalApp
                 Console.Write("Enter a category: ");
                 category = Console.ReadLine();
                 categories.Add(category);
-
-                count += 1;
             }
 
             string result = manager.AddVendor(name, telephone, email, categories);
@@ -263,7 +260,7 @@ namespace FestivalApp
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
-                Console.WriteLine("✓ " + result.Substring(9));
+                Console.WriteLine(" ✓ " + result.Substring(9));
             }
             else
             {
@@ -345,9 +342,6 @@ namespace FestivalApp
                 Console.WriteLine("\n⚠ Invalid id. The ids must be a number.");
                 return;
             }
-            
-            // better way would be so get the role of Person and then show them field names to choose from
-            // this would need to be seperated across the system
 
             Console.Write("Enter the field to edit: ");
             string field = Console.ReadLine();
@@ -360,7 +354,7 @@ namespace FestivalApp
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
-                Console.WriteLine("✓ " + result.Substring(9));
+                Console.WriteLine(" ✓ " + result.Substring(9));
             }
             else
             {
@@ -387,7 +381,7 @@ namespace FestivalApp
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
-                Console.WriteLine("✓ " + result.Substring(9));
+                Console.WriteLine(" ✓ " + result.Substring(9));
             }
             else
             {

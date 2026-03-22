@@ -283,9 +283,9 @@
             return null;
         }
 
-        public void Add(Person person)
+        public bool Add(Person person)
         {
-            if (person == null) throw new Exception("Person cannot be a null object.");
+            if (person == null) return false;
 
             using (var conn = GetConnection())
             {
@@ -316,7 +316,10 @@
 
                             else if (person is Vendor) cmd.Parameters.AddWithValue("@role", "VENDOR");
 
-                            else throw new Exception("Unsupported role for person");
+                            else
+                            {
+                                return false;
+                            }
 
                             cmd.ExecuteNonQuery();
 
@@ -337,11 +340,12 @@
                             AddVendor(conn, tx, vendor, personID);
                         }
                         tx.Commit();
+                        return true;
                     }
                     catch
                     {
                         tx.Rollback();
-                        throw;
+                        return false; ;
                     }
                 }
             }
@@ -400,12 +404,9 @@
                 cmd.Transaction = tx;
                 cmd.CommandText =
                     @"INSERT INTO crew
-                            (person_id, rate, employment, hours)
+                            (person_id, hourly_rate, employment, weekly_hours)
                             VALUES
                             (@person_id, @hourly_rate, @employment, @weekly_hours);";
-
-                // need to check hours is in line with emloyment type
-                // check spec for buisiness / logic divide
 
                 cmd.Parameters.AddWithValue("@person_id", personID);
                 cmd.Parameters.AddWithValue("@hourly_rate", crew.Rate);
@@ -464,7 +465,10 @@
         // ON DELETE CASCADE in the DB removes the performer/crew/vendor as well
         public bool Delete(int id)
         {
-            if (id == 0) throw new Exception("Person cannot have an invalid ID number.");
+            if (id == 0)
+            {
+                return false;
+            }
 
             using (var conn = GetConnection())
             {
@@ -490,7 +494,6 @@
                     {
                         tx.Rollback();
                         return false;
-                        throw;
                     }
                 }
             }
@@ -498,15 +501,15 @@
 
         public bool EditByID(int id, string column, string user_value)
         {
-            if (id == 0) throw new Exception("ID cannot be null.");
-
-            string[] allowed = { "name", "telephone", "email", "fee", "hourly_rate", "employment", "weekly_hours", "category" };
-            if (!allowed.Contains(column))
-                throw new Exception("Invalid column name.");
+            if (id == 0) return false;
 
             Person person = FindByID(id);
-            if (person == null) throw new Exception("Person not found.");
 
+            if (person == null)
+            {
+                return false;
+            }
+                
             using (var conn = GetConnection())
             {
                 conn.Open();
