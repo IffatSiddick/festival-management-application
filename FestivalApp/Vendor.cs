@@ -4,17 +4,12 @@
 
     internal class Vendor : Person
     {
-        public List<String> product_categories { get; }
+        public List<String> ProductCategories { get; }
 
         public Vendor(int personID, string name, string number, string email, List<string> categories) 
             : base(personID, name, number, email, "VENDOR")
         {
-            product_categories = categories;
-        }
-
-        public List<string> get_product_categoriess()
-        {
-            return product_categories;
+            ProductCategories = categories;
         }
 
         public override void DisplayInformation()
@@ -25,7 +20,7 @@
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Product Category/Categories:");
 
-            foreach (String product in product_categories)
+            foreach (String product in ProductCategories)
             {
                 Console.WriteLine(product);
             }

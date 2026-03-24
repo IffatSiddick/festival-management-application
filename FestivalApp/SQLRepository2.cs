@@ -25,16 +25,17 @@
                     person.name,
                     person.telephone,
                     person.email,
+                    person.role,
                     performer.fee,
                     crew.hourly_rate,
                     crew.employment,
-                    crew.weekly_hours,
+                    crew.weekly_hours
                 FROM person
-                LEFT JOIN performer ON peformer.person_id = person.person_id
+                LEFT JOIN performer ON performer.person_id = person.person_id
                 LEFT JOIN crew ON crew.person_id = person.person_id
-                LEFT JOIN vendor ON vendor.person_id = vendor.person_id";
+                LEFT JOIN vendor ON vendor.person_id = person.person_id";
 
-        public List<Person> GetAll()
+        public List<Person>? GetAll()
         {
             int personID;
             string name;
@@ -354,7 +355,7 @@
         public void AddPerformer(MySqlConnection conn, MySqlTransaction tx, Performer performer, int personID)
         {
 
-            List<string> genres = performer.get_genres();
+            List<string> genres = performer.GetGenres();
             using (MySqlCommand cmd = conn.CreateCommand())
             {
                 cmd.Transaction = tx;
@@ -419,7 +420,7 @@
 
         public void AddVendor(MySqlConnection conn, MySqlTransaction tx, Vendor vendor, int personID)
         {
-            List<string> categories = vendor.product_categories;
+            List<string> categories = vendor.ProductCategories;
 
             using (MySqlCommand cmd = conn.CreateCommand())
             {
@@ -537,15 +538,20 @@
                                 if (column == "genre")
                                 {
                                     table = "genre_performer";
+                                    column = "genre";
+
+                                    cmd.CommandText =
+                                    $"UPDATE `{table}` SET `{column}` = @user_value WHERE perforner = @person_id;";
                                 }
                                 else
                                 {
                                     table = "performer";
-                                }
-                                cmd.CommandText =
-                                    $"UPDATE `{table}` SET `{column}` = @user_value WHERE person_id = @person_id;";
+                                    column = "fee";
 
-                                cmd.Parameters.AddWithValue("@person_id", person.PersonID);
+                                    cmd.CommandText =
+                                    $"UPDATE `{table}` SET `{column}` = @user_value WHERE person_id = @person_id;";
+                                }
+                                
                                 cmd.Parameters.AddWithValue("@user_value", user_value);
                                 cmd.ExecuteNonQuery();
                             }
@@ -564,7 +570,7 @@
                                 cmd.CommandText =
                                     @"UPDATE `vendor_category` 
                                         SET `category` = @user_value
-                                        WHERE person_id = @person_id;";
+                                        WHERE vendor = @person_id;";
 
                                 cmd.Parameters.AddWithValue("@person_id", id);
                                 cmd.Parameters.AddWithValue("@user_value", user_value);
@@ -582,7 +588,6 @@
                 }
             }
         }
-
 
         public Person? FindByID(int id)
         {
@@ -689,6 +694,112 @@
                 }
             }
             return null;
+        }
+
+        private Person MapRowToItem(MySqlDataReader reader)
+        {
+            int personID = reader.GetInt32("person_id");
+            string name = reader.GetString("name");
+            string telephone = reader.GetString("telephone");
+            string email = reader.GetString("email");
+            string role = reader.GetString("role");
+
+            Person result;   // this will be assigned in every branch below
+
+            if (role == "PERFORMER")
+            {
+                int fee = reader.GetInt32("fee");
+
+                // genres need a separate query — they're a one-to-many list
+                List<string> genres = GetGenresForPerformer(personID);
+
+                result = new Performer(personID, name, telephone, email, fee, genres);
+            }
+            else if (role == "CREW")
+            {
+                int rate = reader.GetInt32("hourly_rate");
+                string employment = reader.GetString("employment");
+                int hours = reader.GetInt32("weekly_hours");
+
+                result = new Crew(personID, name, telephone, email, rate, employment, hours);
+            }
+            else if (role == "VENDOR")
+            {
+                List<string> categories = GetCategoriesForVendor(personID);
+
+                result = new Vendor(personID, name, telephone, email, categories);
+            }
+            else
+            {
+                //this should never run as role can only be PERFORMER/CREW/VENDOR
+                //but compiler needs an else case
+                //role was something unexpected
+                throw new InvalidOperationException($"Unknown role: {role}");
+            }
+
+            return result;
+        }
+
+        private List<string> GetGenresForPerformer(int personID)
+        {
+            var genres = new List<string>();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT genre FROM genre_performer WHERE performer = @id";
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", personID);
+                    using (var rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                            genres.Add(rdr.GetString("genre"));
+                }
+            }
+            return genres;
+        }
+
+        private List<string> GetCategoriesForVendor(int personID)
+        {
+            var categories = new List<string>();
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT category FROM vendor_category WHERE vendor = @id";
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", personID);
+                    using (var rdr = cmd.ExecuteReader())
+                        while (rdr.Read())
+                            categories.Add(rdr.GetString("category"));
+                }
+            }
+            return categories;
+        }
+
+        public List<Person> SearchByName(string searchTerm)
+        {
+            List<Person> results = new List<Person>();
+
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string sql = BASE_SELECT_SQL +
+                             @" WHERE LOWER(person.name) LIKE CONCAT('%', LOWER(@term), '%')
+                                ORDER BY person.name;";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@term", searchTerm);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            results.Add(MapRowToItem(reader));
+                    }
+                }
+            }
+
+            return results;
         }
     }
 }

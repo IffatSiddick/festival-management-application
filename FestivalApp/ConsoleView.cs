@@ -35,7 +35,6 @@ namespace FestivalApp
 
                 string choice = GetInput("Enter your choice (1-8): ");
 
-
                 if (choice == "1")
                 {
                     AddPerformer();
@@ -50,21 +49,25 @@ namespace FestivalApp
                 }
                 else if (choice == "4")
                 {
-                    ViewAllPeople();
+                    FindPerson();
                 }
                 else if (choice == "5")
                 {
-                    ViewByRole();
+                    ViewAllPeople();
                 }
                 else if (choice == "6")
                 {
-                    EditPerson();
+                    ViewByRole();
                 }
                 else if (choice == "7")
                 {
-                    DeletePerson();
+                    EditPerson();
                 }
                 else if (choice == "8")
+                {
+                    DeletePerson();
+                }
+                else if (choice == "9")
                 {
                     Console.WriteLine("\nThank you for using this Festival Management Application!");
                     running = false;
@@ -85,11 +88,12 @@ namespace FestivalApp
             Console.WriteLine("1. Add New Performer");
             Console.WriteLine("2. Add New Crew");
             Console.WriteLine("3. Add New Vendor");
-            Console.WriteLine("4. View All People");
-            Console.WriteLine("5. View All People in Role");
-            Console.WriteLine("6. Edit Person information");
-            Console.WriteLine("7. Delete Person");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("4. View one People");
+            Console.WriteLine("5. View All People");
+            Console.WriteLine("6. View All People in Role");
+            Console.WriteLine("7. Edit Person information");
+            Console.WriteLine("8. Delete Person");
+            Console.WriteLine("9. Exit");
         }
 
         public void ShowMessage(string message)
@@ -234,7 +238,7 @@ namespace FestivalApp
             Console.Write("Email: ");
             string email = Console.ReadLine();
 
-            Console.Write("How many products does this vrndor sell? ");
+            Console.Write("How many products does this vendor sell? ");
             string category_in = Console.ReadLine();
 
             int category_amount;
@@ -339,9 +343,16 @@ namespace FestivalApp
 
             if (!int.TryParse(id_in, out id))
             {
-                Console.WriteLine("\n⚠ Invalid id. The ids must be a number.");
+                Console.WriteLine("\n⚠ Invalid ID. The ID must be a number.");
                 return;
             }
+
+            Console.WriteLine("These are the field names all people have:");
+            Console.WriteLine("name, telephone, email");
+
+            Console.WriteLine("Performers has: fee");
+
+            Console.WriteLine("Crew have these unique field names: hourly_rate, employment, weekly_hours");
 
             Console.Write("Enter the field to edit: ");
             string field = Console.ReadLine();
@@ -358,7 +369,7 @@ namespace FestivalApp
             }
             else
             {
-                Console.WriteLine("⚠ " + result.Substring(7));
+                Console.WriteLine("⚠ " + result);
             }
         }
 
@@ -386,6 +397,31 @@ namespace FestivalApp
             else
             {
                 Console.WriteLine("⚠ " + result.Substring(7));
+            }
+        }
+
+        private void FindPerson()
+        {
+            Console.WriteLine("\n=== FIND PERSON ===");
+            Console.Write("Enter name of person you want to find: ");
+            string name = Console.ReadLine();
+
+            List<Person> people = new List<Person>();
+            string result = manager.FindPersonByName(name, out people);
+
+            Console.WriteLine();
+            if (result.StartsWith("ERROR"))
+            {
+                Console.WriteLine(" ✓ " + result.Substring(7));
+            }
+            else
+            {
+                for (int i = 0; i < people.Count; i++)
+                {
+                    Console.WriteLine("--- Person #" + (i + 1) + " ---");
+                    people[i].DisplayInformation();
+                    Console.WriteLine();
+                }
             }
         }
     }

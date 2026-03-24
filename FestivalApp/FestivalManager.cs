@@ -41,9 +41,19 @@ namespace FestivalApp
             {
                 errors.Add("ERROR: Fee is too high.");
             }
-            else if (genres == null)
+            
+            if (genres == null)
             {
                 errors.Add("ERROR: You must enter at least one genre the performer performs in.");
+            }
+            else {
+                foreach (string genre in genres)
+                {
+                    if (string.IsNullOrWhiteSpace(genre))
+                    {
+                        errors.Add("ERROR: genre cannot be empty");
+                    }
+                }
             }
 
             if (errors.Count > 0)
@@ -131,9 +141,19 @@ namespace FestivalApp
             {
                 errors.Add("ERROR: Email cannot be empty");
             }
-            else if (product_categories == null)
+            
+            if (product_categories == null)
             {
                 errors.Add("ERROR: You must enter at least one product categories the vendor sells in.");
+            }
+            else {
+                foreach (string product in product_categories)
+                {
+                    if (string.IsNullOrWhiteSpace(product))
+                    {
+                        errors.Add("ERROR: product name cannot be empty");
+                    }
+                }
             }
 
             if (errors.Count > 0)
@@ -155,8 +175,7 @@ namespace FestivalApp
         {
             return repository.GetAll();
         }
-
-        
+       
         // Get person by ID
         public Person GetPersonByID(int personId)
         {
@@ -187,7 +206,8 @@ namespace FestivalApp
                 return "ERROR: Person was not found!";
             }
 
-            string[] allowed = { "name", "telephone", "email", "fee", "hourly_rate", "employment", "weekly_hours", "category" };
+            string[] allowed = { "name", "telephone", "email", "fee", "genre", "genres",
+                "hourly_rate", "employment", "weekly_hours", "category", "categories", "product category" };
             if (!allowed.Contains(column_name))
             {
                 return "Invalid column name.";
@@ -212,5 +232,23 @@ namespace FestivalApp
             }
         }
 
+        public string FindPersonByName(string name, out List<Person> people)
+        {
+            people = new List<Person>();
+            people = repository.SearchByName(name);
+
+            if (people == null)
+            {
+                return "ERROR: No person with that name found.";
+            }
+            else if (people.Count == 0)
+            {
+                return "ERROR: No person with that name found.";
+            }
+            else
+            {
+                return "SUCCESS";
+            }
+        }
     }
 }

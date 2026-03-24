@@ -3,88 +3,85 @@
   "WorkspaceRootPath": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\festival_performer.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\festival_performer.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\SQLRepository2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\SQLRepository2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\FestivalManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\FestivalManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Crew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Crew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Performer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\Performer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FestivalApp\\ConsoleView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 232,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "festival_performer.sql",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\festival_performer.sql",
-              "RelativeDocumentMoniker": "FestivalApp\\festival_performer.sql",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\festival_performer.sql",
-              "RelativeToolTip": "FestivalApp\\festival_performer.sql",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-03-22T19:56:39.495Z",
+              "DocumentIndex": 4,
+              "Title": "Vendor.cs",
+              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Vendor.cs",
+              "RelativeDocumentMoniker": "FestivalApp\\Vendor.cs",
+              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Vendor.cs",
+              "RelativeToolTip": "FestivalApp\\Vendor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T15:58:58.798Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ConsoleView.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\ConsoleView.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs",
-              "RelativeToolTip": "FestivalApp\\ConsoleView.cs",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAjwMgAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs",
+              "RelativeDocumentMoniker": "FestivalApp\\Program.cs",
+              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs",
+              "RelativeToolTip": "FestivalApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T19:42:24.713Z",
+              "WhenOpened": "2026-03-24T15:49:06.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ConsoleView.cs",
+              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs",
+              "RelativeDocumentMoniker": "FestivalApp\\ConsoleView.cs",
+              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\ConsoleView.cs",
+              "RelativeToolTip": "FestivalApp\\ConsoleView.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAEUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T15:08:33.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FestivalManager.cs",
               "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\FestivalManager.cs",
               "RelativeDocumentMoniker": "FestivalApp\\FestivalManager.cs",
               "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\FestivalManager.cs",
               "RelativeToolTip": "FestivalApp\\FestivalManager.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAALcAAAAAAAAAAAAkwPMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T15:51:57.169Z",
+              "WhenOpened": "2026-03-24T15:07:52.626Z",
               "EditorCaption": ""
             },
             {
@@ -95,74 +92,9 @@
               "RelativeDocumentMoniker": "FestivalApp\\SQLRepository2.cs",
               "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\SQLRepository2.cs",
               "RelativeToolTip": "FestivalApp\\SQLRepository2.cs",
-              "ViewState": "AgIAAIsBAAAAAAAAAAAnwJcBAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:21:50.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Person.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Person.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\Person.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Person.cs",
-              "RelativeToolTip": "FestivalApp\\Person.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T22:08:04.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Performer.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Performer.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\Performer.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Performer.cs",
-              "RelativeToolTip": "FestivalApp\\Performer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T21:24:57.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Vendor.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\Vendor.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Vendor.cs",
-              "RelativeToolTip": "FestivalApp\\Vendor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T12:31:55.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Crew.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Crew.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\Crew.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Crew.cs",
-              "RelativeToolTip": "FestivalApp\\Crew.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T21:18:14.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs",
-              "RelativeDocumentMoniker": "FestivalApp\\Program.cs",
-              "ToolTip": "C:\\Users\\iffat\\source\\repos\\FestivalApp\\FestivalApp\\Program.cs",
-              "RelativeToolTip": "FestivalApp\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T19:11:06.685Z",
+              "WhenOpened": "2026-03-24T15:07:51.327Z",
               "EditorCaption": ""
             }
           ]
