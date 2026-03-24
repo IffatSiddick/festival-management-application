@@ -197,7 +197,8 @@ namespace FestivalApp
         }
 
         // Edit person from database
-        public string EditPerson(int personID, string column_name, string updated_value)
+        public string EditPerson(int personID, string column_name, 
+            string updated_value, string genre_or_category = "")
         {
             Person person = repository.FindByID(personID);
 
@@ -206,14 +207,28 @@ namespace FestivalApp
                 return "ERROR: Person was not found!";
             }
 
-            string[] allowed = { "name", "telephone", "email", "fee", "genre", "genres",
-                "hourly_rate", "employment", "weekly_hours", "category", "categories", "product category" };
+            string[] allowed = { "name", "telephone", "email", "fee", "genre",
+                "hourly_rate", "employment", "weekly_hours", "category" };
+
+            int rowsAffected = 0;
+
             if (!allowed.Contains(column_name))
             {
                 return "Invalid column name.";
             }
-                
-            repository.EditByID(personID, column_name, updated_value);
+            else if (column_name == "genre" || column_name == "category")
+            {
+                rowsAffected = repository.EditByID(personID, column_name, updated_value, genre_or_category);
+            }
+            else
+            {
+                rowsAffected = repository.EditByID(personID, column_name, updated_value);
+            }
+
+            if (rowsAffected == 0)
+            {
+                return "ERROR: The edit could not be performed.";
+            }
             return "SUCCESS: Person '" + person.Name + "' was edited successfully.";
         }
 
@@ -234,14 +249,9 @@ namespace FestivalApp
 
         public string FindPersonByName(string name, out List<Person> people)
         {
-            people = new List<Person>();
             people = repository.SearchByName(name);
 
-            if (people == null)
-            {
-                return "ERROR: No person with that name found.";
-            }
-            else if (people.Count == 0)
+            if (people.Count == 0)
             {
                 return "ERROR: No person with that name found.";
             }

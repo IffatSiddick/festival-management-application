@@ -350,18 +350,45 @@ namespace FestivalApp
             Console.WriteLine("These are the field names all people have:");
             Console.WriteLine("name, telephone, email");
 
-            Console.WriteLine("Performers has: fee");
+            Console.WriteLine("Performers has: fee, genre");
 
             Console.WriteLine("Crew have these unique field names: hourly_rate, employment, weekly_hours");
+
+            Console.WriteLine("Vendors has: category");
 
             Console.Write("Enter the field to edit: ");
             string field = Console.ReadLine();
 
-            Console.Write("Enter the value to replace the original value: ");
-            string value = Console.ReadLine();
+            string result;
 
-            string result = manager.EditPerson(id, field, value);
+            if (field == "genre")
+            {
+                Console.WriteLine("What genre do you want to change?");
+                string genre = Console.ReadLine();
 
+                Console.Write("Enter the value to replace the original value: ");
+                string value = Console.ReadLine();
+
+                result = manager.EditPerson(id, field, value, genre);
+            }
+            else if (field == "category")
+            {
+                Console.WriteLine("What product category do you want to change?");
+                string category = Console.ReadLine();
+
+                Console.Write("Enter the value to replace the original value: ");
+                string value = Console.ReadLine();
+
+                result = manager.EditPerson(id, field, value, category);
+            }
+            else
+            {
+                Console.Write("Enter the value to replace the original value: ");
+                string value = Console.ReadLine();
+
+                result = manager.EditPerson(id, field, value);
+            }
+            
             Console.WriteLine();
             if (result.StartsWith("SUCCESS"))
             {
